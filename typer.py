@@ -86,7 +86,7 @@ class Window(QtWidgets.QDialog):
 
     def pickText(self):
         texts = ["abcdefghijklmnopqrstuvwxyz", "I’m not superstitious, but I am a little stitious.", "Identity theft is not a joke, Jim! Millions of families suffer every year."
-                , "We Are! PENN STATE!", "Type this text to test the text to test true."]
+                ,"We Are! PENN STATE!", "Type this text to test the text to test true.", "We're no strangers to love You know the rules and so do I A full commitment's what I'm thinking of You wouldn't get this from any other guy"]
         pickedText = random.choice(texts)
         return pickedText
 
