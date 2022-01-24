@@ -1,3 +1,4 @@
+from email import header
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
@@ -16,12 +17,12 @@ class Start(QtWidgets.QDialog):
         self.buttonStart.setStyleSheet("background-color: #4474c2; color: white;")
 
         headerLabel = QLabel(self)
-        headerLabel.setFont(QFont('Arial', 40))
-        headerLabel.setStyleSheet("color: #4474c2")
+        headerLabel.setFont(QFont('Times', 40))
+        headerLabel.setStyleSheet("color: #4474c2; font-weight: bold")
         headerLabel.setText('Welcome to the Typer Game!')
 
         firstLabel = QLabel(self)
-        firstLabel.setFont(QFont('Arial', 20))
+        firstLabel.setFont(QFont('Times', 20))
         firstLabel.setText("Click to begin, when you click start, the timer begins!")
     
         layout = QtWidgets.QVBoxLayout(self)
@@ -50,20 +51,20 @@ class Window(QtWidgets.QDialog):
         '''
 
         headerLabel = QLabel(self)
-        headerLabel.setFont(QFont('Arial', 40))
-        headerLabel.setStyleSheet("color: #4474c2")
+        headerLabel.setFont(QFont('Times', 40))
+        headerLabel.setStyleSheet("color: #4474c2; font-weight: bold")
         headerLabel.setText('Text to type:')
 
         typeText = self.pickText()
         self.text = QLabel(self)
-        self.text.setFont(QFont('Arial', 20))
+        self.text.setFont(QFont('Times', 20))
         self.text.setText(typeText)
 
         self.typingSpace = QtWidgets.QLineEdit(self)
         self.typingSpace.setFixedHeight(80)
     
         self.finalText = QLabel(self)
-        self.finalText.setFont(QFont('Arial', 20))
+        self.finalText.setFont(QFont('Times', 20))
         self.finalText.setText("")
 
         '''
