@@ -57,8 +57,9 @@ class Window(QtWidgets.QDialog):
 
         typeText = self.pickText()
         self.text = QLabel(self)
-        self.text.setFont(QFont('Times', 20))
+        self.text.setFont(QFont('Times', 15))
         self.text.setText(typeText)
+        self.text.setWordWrap(True)
 
         self.typingSpace = QtWidgets.QLineEdit(self)
         self.typingSpace.setFixedHeight(80)
@@ -78,7 +79,7 @@ class Window(QtWidgets.QDialog):
         layout.setSpacing(20)
         layout.setAlignment(Qt.AlignCenter)
         layout.addWidget(headerLabel, alignment=Qt.AlignCenter)
-        layout.addWidget(self.text, alignment=Qt.AlignCenter)
+        layout.addWidget(self.text)
         layout.addWidget(self.typingSpace)
         layout.addWidget(self.finalText, alignment=Qt.AlignCenter)
         #layout.addWidget(self.buttonRestart)
@@ -86,8 +87,7 @@ class Window(QtWidgets.QDialog):
         self.typingSpace.textChanged.connect(lambda: self.checkText(typeText,startTime))
 
     def pickText(self):
-        texts = ["abcdefghijklmnopqrstuvwxyz", "I’m not superstitious, but I am a little stitious.", "Identity theft is not a joke, Jim! Millions of families suffer every year."
-                ,"We Are! PENN STATE!", "Type this text to test the text to test true.", "We're no strangers to love You know the rules and so do I A full commitment's what I'm thinking of You wouldn't get this from any other guy"]
+        texts = ["abcdefghijklmnopqrstuvwxyz", "I'm not superstitious, but I am a little stitious.", "Identity theft is not a joke, Jim! Millions of families suffer every year.","We Are! PENN STATE!", "Type this text to test the text to test true.", "We're no strangers to love You know the rules and so do I A full commitment's what I'm thinking of You wouldn't get this from any other guy"]
         pickedText = random.choice(texts)
         return pickedText
 
@@ -104,12 +104,12 @@ if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
     start = Start()
-    start.setFixedHeight(500)
+    start.setFixedHeight(550)
     start.setFixedWidth(700)
   
     if start.exec_() == QtWidgets.QDialog.Accepted:
         window = Window()
-        window.setFixedHeight(500)
+        window.setFixedHeight(550)
         window.setFixedWidth(700)
         window.show()
         sys.exit(app.exec_())
