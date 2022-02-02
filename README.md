@@ -1,5 +1,5 @@
 # Typing Speed Test Game!
-(#) Note that the PyQt5 is needed in order to run.
+ Note that the PyQt5 is needed in order to run.
 
 To Download [PyQt5](https://pypi.org/project/PyQt5/):
 ```
